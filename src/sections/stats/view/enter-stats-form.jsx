@@ -16,7 +16,7 @@ import {
 
 // Import your RTK Query hooks
 import {
-  useGetKpisQuery,
+  useGetAllKpisQuery,
   useGetPlayerStatsByGameIdQuery,
   useCreatePlayerStatMutation,
   useUpdatePlayerStatMutation,
@@ -40,7 +40,7 @@ export function EnterStatsForm({ contextId }) {
   // --- ALL REACT HOOKS MUST BE CALLED UNCONDITIONALLY AT THE TOP LEVEL ---
 
   // 1. Fetch Necessary Data for the Form
-  const { data: kpis = [], isLoading: loadingKpis } = useGetKpisQuery();
+  const { data: kpis = [], isLoading: loadingKpis } = useGetAllKpisQuery();
 
   // Primary source for players/managers and their teams in this game
   const { data: gameParticipants = [], isLoading: loadingGameParticipants } =
